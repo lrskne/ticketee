@@ -1,0 +1,54 @@
+I did a git push and got this mesage back:
+
+
+laura@laura-ThinkPad-X1-Carbon:~/cfRails/ticketee$ rails generate rspec:install
+      create  .rspec
+      create  spec
+      create  spec/spec_helper.rb
+laura@laura-ThinkPad-X1-Carbon:~/cfRails/ticketee$ git add .
+laura@laura-ThinkPad-X1-Carbon:~/cfRails/ticketee$ git commit -m "Setup gem dependencies and run rspec generator"
+[master cc46242] Setup gem dependencies and run rspec generator
+ 23 files changed, 373 insertions(+)
+ create mode 100644 .gemfile
+ create mode 100644 .rspec
+ create mode 100755 bin/autospec
+ create mode 100755 bin/erubis
+ create mode 100755 bin/htmldiff
+ create mode 100755 bin/ldiff
+ create mode 100755 bin/nokogiri
+ create mode 100755 bin/rackup
+ create mode 100755 bin/rails
+ create mode 100755 bin/rake
+ create mode 100755 bin/rdoc
+ create mode 100755 bin/ri
+ create mode 100755 bin/rspec
+ create mode 100755 bin/sass
+ create mode 100755 bin/sass-convert
+ create mode 100755 bin/scss
+ create mode 100755 bin/sprockets
+ create mode 100755 bin/thor
+ create mode 100755 bin/tilt
+ create mode 100755 bin/tt
+ create mode 100644 spec/spec_helper.rb
+laura@laura-ThinkPad-X1-Carbon:~/cfRails/ticketee$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 29, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (26/26), 3.33 KiB, done.
+Total 26 (delta 20), reused 0 (delta 0)
+To git@github.com:lrskne/ticketee.git
+   4225770..cc46242  master -> master

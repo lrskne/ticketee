@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%= stylesheet_link_tag "application" %>
 <html>
 <head>
   <title>Ticketee</title>
@@ -7,6 +8,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% flash.each do |key, value| %>
+<div class='flash' id='<%= key %>'>
+<%= value %>
+</div>
+<% end %>
 
 <%= yield %>
 
