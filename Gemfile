@@ -36,3 +36,13 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# lbe 7/10/13 additions:
+# note book has 2.11, but rspec -v shows 2.14.2, so changed version
+# Putting rspec-rails in both development & test
+group :test, :development do
+gem 'rspec-rails', '~> 2.9'
+end
+group :test do
+gem 'capybara', '1.1.2'
+end
