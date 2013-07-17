@@ -34,6 +34,12 @@ class TicketsController < ApplicationController
   end
   end
   
+  def destroy
+    @ticket.destroy
+    flash[:notice] = "Ticket has been deleted."
+    redirect_to @project
+  end
+  
   def find_ticket
     @ticket = @project.tickets.find(params[:id])
   end
