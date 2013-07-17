@@ -1,7 +1,10 @@
 Ticketee::Application.routes.draw do
   root :to => "projects#index"
-  resources :projects
-  # The priority is based upon order of creation:
+  resources :projects do
+      resources :tickets
+  end
+  
+  # The priority is upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
