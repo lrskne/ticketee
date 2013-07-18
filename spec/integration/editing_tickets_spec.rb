@@ -2,6 +2,13 @@ require 'spec_helper'
 feature "Editing tickets" do
 
  
+  let!(:project) { Factory(:project) }
+  let!(:user) { Factory(:confirmed_user) }
+  let!(:ticket) do
+    ticket = Factory(:ticket, :project => project)
+    ticket.update_attribute(:user, user)
+    ticket
+  end
 
   
   before do
