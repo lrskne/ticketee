@@ -43,5 +43,9 @@ RSpec.configure do |config|
   config.order = "random"
   
   config.include EmailSpec::Helpers
+  
+  
+  # New code added 7.2.1
+  config.include Devise::TestHelpers, :type => :controller
 
 end
