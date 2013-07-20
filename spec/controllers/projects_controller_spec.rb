@@ -41,17 +41,4 @@ describe ProjectsController do
       flash[:alert].should == message
   end
 end
-
-
-
-
-# old code prior to step 7.2.1
-#describe ProjectsController do
-#  it "displays an error for a missing project" do
-#      get :show, :id => "not-here"
-#      response.should redirect_to(projects_path)
-#      message = "The project you were looking for could not be found."
-#      flash[:alert].should == message
-#  end
-#end
   
