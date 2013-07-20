@@ -51,5 +51,5 @@ group :test do
     gem 'email_spec', '1.2.1'
 
 end
-
+gem 'pry-debugger'
 gem 'devise', '2.1.0'

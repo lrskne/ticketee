@@ -13,26 +13,25 @@ describe ProjectsController do
       sign_in(:user, user)
     end
     
-      ## This code was in there to just make it simple and test the new action
-      ## in the controller: (so up to Listing 7.3)
-      ##it "cannot access the new action" do
-      ##get :new
-      ##response.should redirect_to('/')
-      ##flash[:alert].should == "You must be an admin to do that."
-    it "cannot access the new action" do
-      { :new => :get,
-        :create => :post,
-        :edit => :get,
-        :update => :put,
-        :destroy => :delete }.each do |action, method|
-      it "cannot access the #{action} action" do
-        sign_in(:user, user)
-        send(method, action, :id => project.id)
-        response.should redirect_to(root_path)
-        flash[:alert].should eql("You must be an admin to do that.")
-      end
+    ## This code was in there to just make it simple and test the new action
+    ## in the controller: (so up to Listing 7.3)
+    ##it "cannot access the new action" do
+    ##get :new
+    ##response.should redirect_to('/')
+    ##flash[:alert].should == "You must be an admin to do that."
+    #####it "cannot access the new action" do
+    { :new => :get,
+      :create => :post,
+      :edit => :get,
+      :update => :put,
+      :destroy => :delete }.each do |action, method|
+        it "cannot access the #{action} action" do
+          sign_in(:user, user)
+          send(method, action, :id => project.id)
+          response.should redirect_to(root_path)
+          flash[:alert].should eql("You must be an admin to do that.")
         end
-    end
+      end  
   end
   
   it "displays an error for a missing project" do
@@ -45,6 +44,7 @@ end
 
 
 
+
 # old code prior to step 7.2.1
 #describe ProjectsController do
 #  it "displays an error for a missing project" do
@@ -54,3 +54,4 @@ end
 #      flash[:alert].should == message
 #  end
 #end
+  
