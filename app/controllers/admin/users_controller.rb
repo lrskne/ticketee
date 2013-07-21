@@ -50,6 +50,20 @@ class Admin::UsersController < Admin::BaseController
   def show
     #lbelater - empty for now
   end
+  
+  def destroy
+    if @user == current_user
+    flash[:alert] = "You cannot delete yourself!"
+    else
+      @user.destroy
+      flash[:notice] = "User has been deleted."
+    end
+    redirect_to admin_users_path
+  end
+
+
+
+  
 end # end of class
  
 # private area is always at the bottom, and IS after the class definition
