@@ -1,5 +1,5 @@
 Ticketee::Application.routes.draw do
-  get "admin/users/index"
+  get "users/index"
 
   devise_for :users
 
