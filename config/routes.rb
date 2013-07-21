@@ -1,6 +1,5 @@
 Ticketee::Application.routes.draw do
-  get "admin/users/index"
-
+  
   devise_for :users
 
   root :to => "projects#index"
@@ -9,6 +8,11 @@ Ticketee::Application.routes.draw do
   end
   
   
+  namespace :admin do
+    root :to => "base#index"
+    resources :users
+  end
+
   
   # The priority is upon order of creation:
   # first created -> highest priority.
