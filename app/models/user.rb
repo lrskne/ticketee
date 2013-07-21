@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   
-  ### here by mistake lbe??? should be in the ticket.rb belongs_to :user
+  attr_accessible :email, :password, :admin, :as => :admin
+
+  def to_s
+    "#{email} (#{admin? ? "Admin" : "User"})"
+  end
+
 
 end
